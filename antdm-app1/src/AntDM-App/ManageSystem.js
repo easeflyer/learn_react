@@ -14,16 +14,20 @@ class App extends React.Component {
 		super();
 		this.state = {
 			staff: new Staff(),
-			frame: {},
+			//frame: {},
 			staffDetail: null
 		};
 	}
 	filtStaff = (filtType) => {
-		alert(1111);
-		// console.log('this.state.staff');
-		// console.log(this.state.staff);
 		this.setState({
 			staff: this.state.staff.filtStaff(filtType)
+		});
+		console.log('this.state.staff...');
+		console.log(this.state.staff);		
+	}
+	sortStaff = (filtType) => {
+		this.setState({
+			staff: this.state.staff.sortStaff(filtType)
 		});
 		console.log('this.state.staff...');
 		console.log(this.state.staff);		
@@ -31,7 +35,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<StaffHeader filtStaff={this.filtStaff} />
+				<StaffHeader sortStaff={this.sortStaff} filtStaff={this.filtStaff} />
 				<StaffItemPanel staff={this.state.staff} />
 			</div>
 		);

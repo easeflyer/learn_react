@@ -35,7 +35,12 @@ export default class StaffHeader extends React.Component {
 		
 
 	}
-	handleSortChange = () => {
+	handleSortChange = (value) => {
+		this.props.sortStaff(value);
+		this.setState({
+			sortshow:false
+		});
+		//filtType = 
 
 	}
 	onMaskClick = () => {
@@ -56,7 +61,7 @@ export default class StaffHeader extends React.Component {
 			<Menu
 				className="foo-menu"
 				data={data}
-				value={['1']}
+				//value={['1']}
 				level={1}
 				onChange={this.handleFiltChange}
 			//height={document.documentElement.clientHeight * 0.6}
@@ -72,10 +77,10 @@ export default class StaffHeader extends React.Component {
 			<Menu
 				className="foo-menu"
 				data={data1}
-				value={['1']}
+				//value={['1']}
 				level={1}
 				style={{ marginLeft: '30px' }}
-			//onChange={this.onChange}
+				onChange={this.handleSortChange}
 			//height={document.documentElement.clientHeight * 0.6}
 			/>
 		);

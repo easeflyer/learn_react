@@ -46,7 +46,7 @@ class StaffItemPanel extends React.Component {
 		});
 	}
 	render() {
-
+		this.state.dataSource = this.state.dataSource.cloneWithRows(this.props.staff.staff);
 		let row = (rowData, sectionID, rowID) => {
 			return (
 				<Flex style={{ 'padding': '50px 10px', 'borderBottom': '1px solid #cccccc' }}>
