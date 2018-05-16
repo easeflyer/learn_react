@@ -19,9 +19,14 @@ class App extends React.Component {
 		};
 	}
 	filtStaff = (filtType) => {
+		alert(1111);
+		// console.log('this.state.staff');
+		// console.log(this.state.staff);
 		this.setState({
 			staff: this.state.staff.filtStaff(filtType)
 		});
+		console.log('this.state.staff...');
+		console.log(this.state.staff);		
 	}
 	render() {
 		return (

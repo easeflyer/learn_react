@@ -4,7 +4,7 @@ export default class STAFF {
 		this.rData = STAFF.rawData;
 		this.allData = this.rData;
 		this.staff = {};
-		this.genData(0);
+		this.staff = this.genData(0);
 		this.allStaff = this.staff;
 	}
 	genData(pIndex){
@@ -14,19 +14,23 @@ export default class STAFF {
 			if(this.rData[i]===undefined) break;
 			dataBlobs[`${ii}`] = this.rData[i];
 		}
-		this.staff = {...this.staff,...dataBlobs};
-		console.log(this.staff);
+		//this.staff = {...this.staff,...dataBlobs};
+		return dataBlobs;
+		//console.log(this.staff);
 		//return dataBlobs;
 	}
 	//筛选
-	filtStaff(filtType){
-	    this._filtStaff(filtType);
-		//this._searchStaff(this.word);
-		this.genData(0)
-		return this.staff;
+	filtStaff = (filtType) => {
+		this._filtStaff(filtType);
+		// console.log('this.rData')
+		// console.log(this.rData);
+		this.staff = this.genData(0);
+		console.log('this.staff')
+		console.log(this.staff);
+		return this;
 	}
 	
-	_filtStaff(filtType){
+	_filtStaff = (filtType) => {
 	    this.filtType = filtType;
 	    switch(parseInt(filtType)){
 		    case 0: 
@@ -34,8 +38,7 @@ export default class STAFF {
 				break;
 			case 1: 
 			    this.rData = this.allData.filter(item => {
-					let oItem = JSON.parse(item)
-				    return oItem.id == '主任';
+				    return item.id == '主任';
 				});
 				break;
 			case 2: 

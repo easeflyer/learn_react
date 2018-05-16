@@ -8,19 +8,26 @@ import '../../node_modules/antd-mobile/dist/antd-mobile.css'
 class StaffItemPanel extends React.Component {
 	constructor(props) {
 		super(props);
-		const dataSource = new ListView.DataSource({
+		let dataSource = new ListView.DataSource({
 			rowHasChanged: (row1, row2) => row1 !== row2,
 		});
 		this.pIndex = 0;
+		console.log('this.props.staff.staff')
+		console.log(this.props.staff.staff)
+		
 		this.state = {
 			dataSource,  // dataSource:dataSource,
 			//height:document.documentElement.clientHeight * 3 / 4,
 		};
+		this.state.dataSource = dataSource.cloneWithRows(this.props.staff.staff);
+		console.log('dataSource....');
+		console.log(this.state.dataSource);
 	}
 	onEndReached = (event) => {
 		console.log('reach end', event);
 		setTimeout(() => {
-			this.props.staff.genData(++this.pIndex); // 这条语句更新了 数据来源的所有数据。
+			const dataBlobs = this.props.staff.genData(++this.pIndex); // 这条语句更新了 数据来源的所有数据。
+			this.props.staff.staff = {...this.props.staff.staff,...dataBlobs}
 			this.setState({
 				// 通过调用 cloneWithRowsAndSections 更新数据源，并支持 数据分组 section
 				dataSource: this.state.dataSource.cloneWithRows(this.props.staff.staff)
@@ -34,7 +41,7 @@ class StaffItemPanel extends React.Component {
 		// 计算 listview  的高度。 让 listview  保持顶部和 header 对其。
 		const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).offsetTop;
 		this.setState({
-			dataSource: this.state.dataSource.cloneWithRows(this.props.staff.staff),
+			//dataSource: this.state.dataSource.cloneWithRows(this.props.staff.staff),
 			height: hei
 		});
 	}
