@@ -110,7 +110,7 @@ export default class STAFF {
 	_sortStaff(sortType) {
 	    this.sortType = sortType;
 	    switch(parseInt(sortType)){
-		    case 0: //身份
+		    case 0: //身份   先把身份改成数字 排序
 			    this.allStaff.forEach(item => {
 				    switch(item.info.id) {
 					  case '主任':
@@ -132,6 +132,7 @@ export default class STAFF {
 					else 
 					    return 0;
 				});
+				// 排序完成 再换回来
 			    this.allStaff.forEach(item => {
 				    switch(item.info.id) {
 					  case 1:

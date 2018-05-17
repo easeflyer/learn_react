@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import StaffItem from './StaffItem.js';
-//import { StickyContainer, Sticky } from 'react-sticky';
 import { ListView, Flex } from 'antd-mobile';
+import QueueAnim from 'rc-queue-anim';
 import '../../node_modules/antd-mobile/dist/antd-mobile.css'
-//import '../../node_modules/react-sticky/'
 class StaffItemPanel extends React.Component {
 	constructor(props) {
 		super(props);
@@ -49,13 +47,15 @@ class StaffItemPanel extends React.Component {
 		this.state.dataSource = this.state.dataSource.cloneWithRows(this.props.staff.staff);
 		let row = (rowData, sectionID, rowID) => {
 			return (
-				<Flex style={{ 'padding': '50px 10px', 'borderBottom': '1px solid #cccccc' }}>
+				<QueueAnim delay={500} className="queue-simple">
+				<Flex key={rowData.id} style={{ 'padding': '50px 10px', 'borderBottom': '1px solid #cccccc' }}>
 					<Flex.Item>{rowData.name}</Flex.Item>
 					<Flex.Item>{rowData.sex}</Flex.Item>
 					<Flex.Item>{rowData.age}</Flex.Item>
 					<Flex.Item>{rowData.id}</Flex.Item>
 					<Flex.Item onClick={this.handleClick}> 删除 详情</Flex.Item>
 				</Flex>
+				</QueueAnim>
 			);
 		};
 		return (

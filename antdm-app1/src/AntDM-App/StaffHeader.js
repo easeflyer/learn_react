@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavBar, Menu, Icon } from 'antd-mobile';
+import QueueAnim from 'rc-queue-anim';
 import './style.css'
 export default class StaffHeader extends React.Component {
 	constructor() {
@@ -29,16 +30,16 @@ export default class StaffHeader extends React.Component {
 		//alert(value);
 		this.props.filtStaff(value);
 		this.setState({
-			filtshow:false
+			filtshow: false
 		});
 		//filtType = 
-		
+
 
 	}
 	handleSortChange = (value) => {
 		this.props.sortStaff(value);
 		this.setState({
-			sortshow:false
+			sortshow: false
 		});
 		//filtType = 
 
@@ -59,6 +60,7 @@ export default class StaffHeader extends React.Component {
 		];
 		const filtMenu = (
 			<Menu
+				// ref={(el)=>this.el = el} // 把 自己传递给对象，然后可以设置 默认值
 				className="foo-menu"
 				data={data}
 				//value={['1']}
@@ -74,15 +76,17 @@ export default class StaffHeader extends React.Component {
 
 		];
 		const sortMenu = (
-			<Menu
-				className="foo-menu"
-				data={data1}
-				//value={['1']}
-				level={1}
-				style={{ marginLeft: '30px' }}
-				onChange={this.handleSortChange}
-			//height={document.documentElement.clientHeight * 0.6}
-			/>
+			<QueueAnim className="queue-simple">
+				<Menu key='1'
+					className="foo-menu"
+					data={data1}
+					//value={['1']}
+					level={1}
+					style={{ marginLeft: '30px' }}
+					onChange={this.handleSortChange}
+				//height={document.documentElement.clientHeight * 0.6}
+				/>
+			</QueueAnim>
 		);
 		//const sortMenu = ();
 		const leftMenu = (

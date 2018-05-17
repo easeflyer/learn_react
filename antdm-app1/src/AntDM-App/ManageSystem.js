@@ -14,7 +14,6 @@ class App extends React.Component {
 		super();
 		this.state = {
 			staff: new Staff(),
-			//frame: {},
 			staffDetail: null
 		};
 	}
@@ -22,15 +21,11 @@ class App extends React.Component {
 		this.setState({
 			staff: this.state.staff.filtStaff(filtType)
 		});
-		console.log('this.state.staff...');
-		console.log(this.state.staff);		
 	}
 	sortStaff = (filtType) => {
 		this.setState({
 			staff: this.state.staff.sortStaff(filtType)
 		});
-		console.log('this.state.staff...');
-		console.log(this.state.staff);		
 	}
 	render() {
 		return (
