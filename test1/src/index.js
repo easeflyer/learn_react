@@ -37,7 +37,8 @@ import registerServiceWorker from './registerServiceWorker';
 //import './react-adv/PropTypes'              // 类型检查
 //import './react-adv/Ref1'                   // Ref 基本应用。
 //import './react-adv/Ref'                   // Ref 基本应用。
-
+//import './react-adv/Portals'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
+import './react-adv/Portals1'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
 
 
 // 以下为 蚂蚁金服 Ant Design UI 框架案例
@@ -53,7 +54,7 @@ import registerServiceWorker from './registerServiceWorker';
 //import './antd-m/ListView2'           // 官方长列表 没有 section 分组数据
 //import './antd-m/ListView_1'          // 长列表 官方案例 附带详细说明
 //import './antd-m/ListView_2'          // 自定义长列表
-import './antd-m/Menu.js'               // 菜单
+//import './antd-m/Menu.js'               // 菜单
 
 //import './antd/Table'                 // 一个普通的表格
 //import './antd/Table1'                  // 用到了 column 和 columngroup 组件
