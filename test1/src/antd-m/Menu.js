@@ -1,7 +1,12 @@
-/* eslint no-nested-ternary:0 */
+/* eslint no-nested-ternary:0 
+概述：
+
+菜单是 flex 布局，因此会撑开整个屏幕，考虑和抽题布局的不同。
+*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd-mobile/dist/antd-mobile.css';
+import './Menu.css'
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
 
 const data = [

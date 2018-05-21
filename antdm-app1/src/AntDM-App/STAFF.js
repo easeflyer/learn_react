@@ -36,7 +36,31 @@ export default class STAFF {
 		this.staff = this.genData(0);
 		return this;
 	}
-	
+	delStaff(id){
+		this.rData = this.rData.filter((item,index) =>{
+			return index != id;
+		});
+		this.staff = this.genData(0);
+		return this;
+	}
+	editStaffItem(item) {
+		//this.rData = this.allData;
+	    this.rData.forEach((staffItem,key) => {
+		    if(key == item.key) {
+				staffItem.name = item.name;
+				staffItem.sex = item.sex;
+				staffItem.age = parseInt(item.age);
+				staffItem.id = item.id;
+				staffItem.descrip = item.descrip;			
+			}
+		});
+		//this._sortStaff(this.sortType);
+		//this._filtStaff(this.filtType);
+		//this._searchStaff(this.word);
+		this.staff = this.genData(0);
+		return this;
+	}
+
 	_filtStaff = (filtType) => {
 	    this.filtType = filtType;
 	    switch(parseInt(filtType)){
@@ -130,6 +154,23 @@ export default class STAFF {
 				break;
 			default: break;
 		}
+	}
+	//搜索
+	search(word){
+	    //this._filtStaff(this.filtType);
+		this._search(word);
+		this.staff = this.genData(0);
+		return this;
+	}
+	_search(word){
+	    this.word = word;
+	    //在staff中搜索
+	    this.rData = this.rData.filter(item => {
+		    return item.name.indexOf(word)!=-1 || 
+			       (item.age+'').indexOf(word)!=-1 || 
+				   item.id.indexOf(word)!=-1 ||
+				   item.sex.indexOf(word)!=-1;
+		});
 	}
 	
 		

@@ -37,7 +37,10 @@ import registerServiceWorker from './registerServiceWorker';
 //import './react-adv/PropTypes'              // 类型检查
 //import './react-adv/Ref1'                   // Ref 基本应用。
 //import './react-adv/Ref'                   // Ref 基本应用。
-
+//import './react-adv/ImportThen'           // 使用的是 importThen 方法。
+//import './antd-m/LoadModule/App'          // 这是一个程序框架，测试动态加载。
+//import './react-adv/ReactRouter/Router1'           // 测试路由功能。
+//import './react-adv/Loadable/App'           // 动态加载测试，根据不同的条件，加载模块。可以考虑不用路由的功能。 直接用文件夹组织模块即可。
 
 
 // 以下为 蚂蚁金服 Ant Design UI 框架案例
@@ -53,11 +56,21 @@ import registerServiceWorker from './registerServiceWorker';
 //import './antd-m/ListView2'           // 官方长列表 没有 section 分组数据
 //import './antd-m/ListView_1'          // 长列表 官方案例 附带详细说明
 //import './antd-m/ListView_2'          // 自定义长列表
-import './antd-m/Menu.js'               // 菜单
+//import './antd-m/Menu.js'             // 菜单(也包含多级菜单)
+//import './antd-m/Menu1.js'              // 菜单 多级菜单
+//import './antd-m/Drawer'              // 抽屉菜单 菜单项由 List 构造
+//import './antd-m/Drawer_1'              // 抽屉菜单 菜单项由 List 构造
+import './antd-m/List'                  // 列表组件
+//import './antd-m/TabBar'
+
+
 
 //import './antd/Table'                 // 一个普通的表格
 //import './antd/Table1'                  // 用到了 column 和 columngroup 组件
 //import './antd/Table2'
+
+// 下面是组合案例
+//import './antd-m/LoadModule/App'        // 这是一个程序框架，测试动态加载。
 
 
 
