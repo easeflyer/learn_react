@@ -10,6 +10,9 @@ export default class StaffHeader extends React.Component {
 			sortshow: false
 		}
 	}
+	handleSearchStaff = ()=>{
+		this.props.searchStaff();
+	}
 	handleFiltClick = (e) => {
 		e.preventDefault();
 		//alert(333);
@@ -76,7 +79,7 @@ export default class StaffHeader extends React.Component {
 
 		];
 		const sortMenu = (
-			<QueueAnim className="queue-simple">
+			<QueueAnim type="top" className="queue-simple">
 				<Menu key='1'
 					className="foo-menu"
 					data={data1}
@@ -106,8 +109,7 @@ export default class StaffHeader extends React.Component {
 					//onLeftClick={this.handleLeftClick}
 					className="top-nav-bar"
 					rightContent={[
-						<Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-						<Icon key="1" type="ellipsis" />,
+						<Icon key="0" type="search" style={{ marginRight: '1px' }} onClick={this.handleSearchStaff} />,
 					]}
 				>NavBar</NavBar>
 				{this.state.filtshow ? filtMenu : null}
