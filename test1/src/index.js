@@ -42,6 +42,9 @@ import registerServiceWorker from './registerServiceWorker';
 //import './react-adv/ReactRouter/Router1'           // 测试路由功能。
 //import './react-adv/Loadable/App'           // 动态加载测试，根据不同的条件，加载模块。可以考虑不用路由的功能。 直接用文件夹组织模块即可。
 
+//import './react-adv/Portals'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
+import './react-adv/Portals1'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
+
 
 // 以下为 蚂蚁金服 Ant Design UI 框架案例
 
@@ -62,8 +65,6 @@ import registerServiceWorker from './registerServiceWorker';
 //import './antd-m/Drawer_1'              // 抽屉菜单 菜单项由 List 构造
 import './antd-m/List'                  // 列表组件
 //import './antd-m/TabBar'
-
-
 
 //import './antd/Table'                 // 一个普通的表格
 //import './antd/Table1'                  // 用到了 column 和 columngroup 组件
