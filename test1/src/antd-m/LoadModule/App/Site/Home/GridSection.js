@@ -52,12 +52,12 @@ const data = [{
 
 function GridItem(el, index) {
     return (
-        <Flex justify="center" align="center" style={{ border: '#FFFFFF' }}>
-            <Flex.Item style={{ flex: 3, border: '#FFFFFF' }}>
+        <Flex justify="center" align="center" style={{ border: '0px' }}>
+            <Flex.Item style={{ flex: 3, border: '0px' }}>
                 <b style={{ fontSize: '14px' }}>{el.text.title}</b><br />
                 <font color="#cccccc">{el.text.desc}</font>
             </Flex.Item>
-            <Flex.Item style={{ flex: 1, border: '#FFFFFF' }}><Icon type={el.icon} style={{ fontSize: '26px', color: '#555599' }} /></Flex.Item>
+            <Flex.Item style={{ flex: 1, border: '0px' }}><Icon type={el.icon} style={{ fontSize: '26px', color: '#555599' }} /></Flex.Item>
         </Flex>
 
     );

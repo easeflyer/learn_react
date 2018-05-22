@@ -46,7 +46,17 @@ class App1 extends React.Component {
         open={this.state.open}
         onOpenChange={this.onOpenChange}
       >
-        Click upper-left corner
+        Click upper-left corner2342342342234234234234234
+        <div>
+      dddddddddddddddddddddddddddddd<br />
+      dddddddddddddddddddddddddddddd<br />
+      dddddddddddddddddddddddddddddd<br />
+      dddddddddddddddddddddddddddddd<br />
+      dddddddddddddddddddddddddddddd<br />
+      dddddddddddddddddddddddddddddd<br />
+      dddddddddddddddddddddddddddddd<br />
+      </div>
+
       </Drawer>
     </div>);
   }

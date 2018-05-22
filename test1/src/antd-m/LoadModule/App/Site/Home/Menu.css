@@ -1,4 +1,5 @@
 .my-drawer {
+    /*width:200px;*/
     position: relative;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -9,6 +10,6 @@
     -webkit-overflow-scrolling: touch;
   }
   .my-drawer .am-drawer-sidebar .am-list {
-    width: 300px;
+    /*width: 300px;*/
     padding: 0;
   }
