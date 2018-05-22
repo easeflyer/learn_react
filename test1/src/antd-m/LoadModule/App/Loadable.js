@@ -11,8 +11,8 @@ import Loadable from 'react-loadable';
 // 定义加载时 如何显示。可以考虑动画。
 const Loading = () => { return <div>Loading...</div> };
 
-export const App1 = Loadable({
-    loader:()=>import('./App1/Home'), 
+export const Site = Loadable({
+    loader:()=>import('./Site/Index'), 
     loading:Loading });
 export const App2 = Loadable({ 
     loader:()=>import('./App2/Home'),

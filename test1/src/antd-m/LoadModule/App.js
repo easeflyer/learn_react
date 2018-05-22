@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd-mobile/dist/antd-mobile.css'; // 这一句是从哪里引入的？
+import 'antd/dist/antd.css'; // 这一句是从哪里引入的？
 import './App.css'
 import { TabBar } from 'antd-mobile';
-import { App1,App2 } from './App/Loadable';
+import { Site,App2 } from './App/Loadable';
 /**
  * 本页面是将来程序的入口，功能包括：
  * １）加载　loadable.js 也就是需要动态载入的所有　子程序。
@@ -19,7 +20,7 @@ class TabBarExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'blueTab',
       hidden: false,
       fullScreen: true,  // 是否全屏显示
     };
@@ -65,7 +66,7 @@ class TabBarExample extends React.Component {
             }}
             data-seed="logId"
           >
-            {this.state.selectedTab=='blueTab'?this.renderContent(<App1 />):null}
+            {this.state.selectedTab=='blueTab'?this.renderContent(<Site />):null}
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -121,7 +122,7 @@ class TabBarExample extends React.Component {
               });
             }}
           >
-            {this.state.selectedTab=='greenTab'?this.renderContent(<App1 />):null}
+            {this.state.selectedTab=='greenTab'?this.renderContent(<Site />):null}
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}

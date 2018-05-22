@@ -97,7 +97,3 @@ class ListExample extends React.Component {
 
 ReactDOM.render(<ListExample />, document.getElementById('root'));
 
-
-function Lista(){
-  return <Item>aaaaaaaaaaa</Item>
-}
