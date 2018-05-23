@@ -5,12 +5,13 @@ import './BodyDrawer.css'
 import Index from './Home/Index'
 import Navbar from './Navbar'
 
-import { Drawer, List, NavBar, Icon } from 'antd-mobile';
+import { Drawer, List, NavBar } from 'antd-mobile';
+import { Icon } from 'antd'
 
 /**
  * BodyDrawer 是整个网站的外层包裹。
  *  sidebar 抽屉菜单
- *  page    保存所有页面内容，和抽屉菜单对应
+ *  menu  菜单，包括 text菜单标题，icon 菜单图标，page 菜单对应的组件
  * 
  * children: 就是所有放入抽屉的内容。考虑应该和抽屉的菜单对应起来。
  * 
@@ -20,7 +21,7 @@ import { Drawer, List, NavBar, Icon } from 'antd-mobile';
 class BodyDrawer extends React.Component {
     state = {
         page: 0, // 默认显示第一页
-        open:false
+        open: false
     }
     onMenuClick = (id) => {
         //alert("点击菜单："+id);
@@ -36,27 +37,27 @@ class BodyDrawer extends React.Component {
     }
     render() {
         // 根据点击的菜单不同，渲染不同的页面内容。这里考虑页面内容，应该动态加载。
-        const page = [
-            <Index />,
-            <h1>page1</h1>,
-            <h1>page2</h1>,
-            <h1>page3</h1>,
-        ];
+        const menu = [
+            { text: '主页', icon: <Icon type="home" />,                 page:<Index /> },
+            { text: '加入会员', icon: <Icon type="user-add" />,         page:<Index /> },
+            { text: '大型赛事', icon: <Icon type="trophy" />,           page:<h1>page1</h1> },
+            { text: '积分赛',   icon: <Icon type="coffee" />,           page:<h1>page2</h1> },
+            { text: '青年桥牌', icon: <Icon type="contacts" />,         page:<h1>page3</h1> },
+            { text: '俱乐部',   icon: <Icon type="usergroup-add" />,    page:<h1>page4</h1> },
+            { text: '学习资料', icon: <Icon type="solution" />,         page:<h1>page5</h1> },
+        ]
         //if(!this.props.open) return null; // 如果 open=false 不渲染任何东西
         // fix in codepen 这里定义了列表的内容。 注意下面的语法。List 标签之间就是一个数组。 数组又 map 构造。
+        // 注意下面的 menu 前面的大括号。因为在 jsx 里面加入了表达式。因此需要用大括号。语法要注意。
         const sidebar = (<List>
-            {[0, 1, 2, 3, 4, 5, 6].map((i, index) => {
-                if (index === 0) {
-                    return (<List.Item key={index}
-                        thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
+            {menu.map((item, index) => {
+                return (
+                    <List.Item key={index}
+                        thumb={item.icon}
                         multipleLine
                         onClick={() => this.onMenuClick(index)}
-                    >Category</List.Item>);
-                }
-                return (<List.Item key={index}
-                    thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-                    onClick={() => this.onMenuClick(index)}
-                >Category{index}</List.Item>);
+                    >{item.text}</List.Item>
+                );
             })}
         </List>);
         // 这里定义屏幕整体效果。 包括顶部导航和抽屉菜单。其中抽屉菜单的sidebar 在上面用 list 定义。
@@ -67,14 +68,14 @@ class BodyDrawer extends React.Component {
                     className="my-drawer"
 
                     //enableDragHandle //是否开启拖拽打开
-                    style={{ minHeight: document.documentElement.clientHeight }}
-                    //contentStyle={{ color: '#A6A6A6', textAlign: 'center', opacity:0.5,width:'0px',height:'0px' }}
+                    style={{ minHeight: document.documentElement.clientHeight-100 }}
+                    //contentStyle={{ }}
                     //overlayStyle={{opacity:0.1,width:'0px'}}
                     sidebar={sidebar}
                     open={this.state.open}
                     onOpenChange={this.props.toggleMenuBar}
                 >
-                    {page[this.state.page]}
+                    {menu[this.state.page].page}
                 </Drawer>
             </div>
         );

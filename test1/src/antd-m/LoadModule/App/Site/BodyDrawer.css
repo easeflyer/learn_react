@@ -5,6 +5,10 @@
     -webkit-overflow-scrolling: touch;
   }
   .my-drawer .am-drawer-sidebar {
+    background-image: url(/Images/bridge.jpg);
+    background-repeat:no-repeat;
+    background-position-y:bottom;
+    background-size:100%;
     background-color: #fff;
     overflow: auto;
     -webkit-overflow-scrolling: touch;

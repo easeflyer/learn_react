@@ -5,6 +5,7 @@ import 'antd/dist/antd.css'; // 这一句是从哪里引入的？
 import './App.css'
 import { TabBar } from 'antd-mobile';
 import { Site,App2 } from './App/Loadable';
+import { Icon } from 'antd'
 /**
  * 本页面是将来程序的入口，功能包括：
  * １）加载　loadable.js 也就是需要动态载入的所有　子程序。
@@ -40,22 +41,12 @@ class TabBarExample extends React.Component {
           hidden={this.state.hidden}    // 是否隐藏
         >
           <TabBar.Item                  // 子元素
-            title="Life"
-            key="Life"
+            title="主页"
+            key="home"
             // 未选中图标
-            icon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-            />
-            }
+            icon={<Icon type="home" style={{fontSize:'22px'}} />}
             // 选中图标样式
-            selectedIcon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-            />
-            }
+            selectedIcon={<Icon type="home" style={{fontSize:'22px'}} />}
             // 是否选中状态
             selected={this.state.selectedTab === 'blueTab'}
             badge={1}  // 红色数字提示
@@ -69,22 +60,10 @@ class TabBarExample extends React.Component {
             {this.state.selectedTab=='blueTab'?this.renderContent(<Site />):null}
           </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            title="Koubei"
-            key="Koubei"
+            icon={<Icon type="rocket" style={{fontSize:'22px'}} />}
+            selectedIcon={<Icon type="rocket" style={{fontSize:'22px'}} />}
+            title="比赛"
+            key="match"
             badge={'new'}
             selected={this.state.selectedTab === 'redTab'}
             onPress={() => {
@@ -98,22 +77,10 @@ class TabBarExample extends React.Component {
             {this.state.selectedTab=='redTab'?this.renderContent(<App2 />):null}
           </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            title="Friend"
-            key="Friend"
+            icon={<Icon type="form" style={{fontSize:'22px'}} />}
+            selectedIcon={<Icon type="form" style={{fontSize:'22px'}} />}
+            title="学习"
+            key="study"
             dot
             selected={this.state.selectedTab === 'greenTab'}
             onPress={() => {
@@ -125,9 +92,9 @@ class TabBarExample extends React.Component {
             {this.state.selectedTab=='greenTab'?this.renderContent(<Site />):null}
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-            title="My"
+            icon={<Icon type="user" style={{fontSize:'22px'}} />}
+            selectedIcon={<Icon type="user" style={{fontSize:'22px'}} />}
+            title="我"
             key="my"
             selected={this.state.selectedTab === 'yellowTab'}
             onPress={() => {
