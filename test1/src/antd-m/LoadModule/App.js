@@ -103,7 +103,7 @@ class TabBarExample extends React.Component {
               });
             }}
           >
-            {this.renderContent('App1')}
+             {this.state.selectedTab=='yellowTab'?this.renderContent(<App2 />):null}
           </TabBar.Item>
         </TabBar>
       </div>
