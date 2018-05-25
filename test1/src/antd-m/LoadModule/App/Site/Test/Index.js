@@ -2,6 +2,7 @@ import React from 'react';
 import { List, } from 'antd-mobile';
 // import { Icon } from 'antd'
 // import './GridSection.css'
+//import './Index1.js' // 用于测试。
 const Item = List.Item;
 const Brief = Item.Brief;
 
