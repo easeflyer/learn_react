@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'antd-mobile/dist/antd-mobile.css'; // 这一句是从哪里引入的？
 import './BodyDrawer.css'
 import Home from './Home/Index'
-import Test from './Test/Index'
+import Test from './Test/Index2'
 import Navbar from './Navbar'
 
 import { Drawer, List } from 'antd-mobile';
