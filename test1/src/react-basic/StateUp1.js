@@ -75,8 +75,6 @@ class TemperatureInput extends React.Component {
  * 这样  input 组件和 BoilingVerdict 组件都可以访问。
  */
 
-
-
 class Calculator extends React.Component {
     constructor(props) {
         super(props);

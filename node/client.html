@@ -1,10 +1,21 @@
-<h1>当前时间</h1>
-<div id="result"></div>
-<script>
-    var source = new EventSource("/server");
-    source.onmessage = function (event) {
-        console.log('event.data......................');
-        console.log(event.data);
-        document.getElementById("result").innerHTML += event.data + "<br>";
-    }    
-</script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <h1>当前时间</h1>
+    <div id="result"></div>
+    <script>
+        var source = new EventSource("/server");
+        source.onmessage = function (event) {
+            console.log('event.data......................');
+            console.log(event.data);
+            document.getElementById("result").innerHTML += event.data + "<br>";
+        }    
+    </script>
+</body>
+
+</html>

@@ -50,16 +50,18 @@ export default class StaffDetail extends React.Component {
 		this.props.closeDetail();
 	}
 
+	// 这个组件是初始化时渲染，当点击详情时，等于是更新。因此会调用这个生命周期函数。
+	// 然后完成对dom组件的初始值调整。
 	componentDidUpdate() {
 		if (this.props.staffDetail == null) { }
 		else {
-			let selSex = this.refs.selSex;
-			for (let i = 0; i < selSex.options.length; i++) {
-				if (selSex.options[i].value == this.props.staffDetail.info.sex) {
-					selSex.options[i].selected = 'selected';
-					break;
-				}
-			}
+			// let selSex = this.refs.selSex;
+			// for (let i = 0; i < selSex.options.length; i++) {
+			// 	if (selSex.options[i].value == this.props.staffDetail.info.sex) {
+			// 		selSex.options[i].selected = 'selected';
+			// 		break;
+			// 	}
+			// }
 			let selId = this.refs.selId;
 			for (let i = 0; i < selId.options.length; i++) {
 				if (selId.options[i].value == this.props.staffDetail.info.id) {
@@ -93,7 +95,8 @@ export default class StaffDetail extends React.Component {
 						<tr>
 							<th>性别</th>
 							<td>
-								<select ref='selSex' id='staffEditSex'>
+								{/* 这里用 defaultValue={staffDetail.info.sex} 也可以实现默认值，省去上面的 ref 部分代码。 */}
+								<select ref='selSex' id='staffEditSex' defaultValue={staffDetail.info.sex}>
 									<option value="男">男</option>
 									<option value="女">女</option>
 								</select>

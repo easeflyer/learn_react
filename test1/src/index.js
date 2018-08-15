@@ -45,6 +45,14 @@ import registerServiceWorker from './registerServiceWorker';
 
 //import './react-adv/Portals'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
 //import './react-adv/Portals1'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
+//import './react-adv/Portals2'                 // 参考 sifou 一步 教程：组件通信
+//import './react-adv/Context1'                // react 16.3 开始对 Context 进行了官方的正式版本支持。 比redux 更加轻量级，实现跨等级的数据通讯。
+
+// Es6 语法测试相关
+
+import './es6/import/import1'
+
+
 
 
 // 以下为 蚂蚁金服 Ant Design UI 框架案例
@@ -72,8 +80,14 @@ import registerServiceWorker from './registerServiceWorker';
 //import './antd/Table2'
 //import './antd/IconFont'                // IconFont 本地部署
 
+// 以下是动画相关的组件
+//import './reactmotion/TweenOne'        // 有问题。
+//import './react-motion/motion'
+//import './reactmotion/motion1'
+
+
 // 下面是组合案例
-import './antd-m/LoadModule/App'        // 这是一个程序框架，测试动态加载。
+//import './antd-m/LoadModule/App'        // 这是一个程序框架，测试动态加载。
 
 
 
