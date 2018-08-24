@@ -1,0 +1,21 @@
+{
+  "name": "dva-example-count",
+  "description": "",
+  "homepage": "https://stackblitz.com/edit/dva-example-count",
+  "dependencies": {
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-scripts": "1.0.10",
+    "dva": "2.0.1",
+    "antd": "3.3.0",
+    "lodash": "4.17.5"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

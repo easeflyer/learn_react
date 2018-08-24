@@ -4,7 +4,12 @@ export const addTodo = text => ({
   id: nextTodoId++,
   text
 })
-
+/**
+ * setVisibilityFilter
+ * 是一个 Action creater  也就是返回 Action 的函数
+ * 
+ * filter 是  VisibilityFilters 中的一个值.
+ */
 export const setVisibilityFilter = filter => ({
   type: 'SET_VISIBILITY_FILTER',
   filter

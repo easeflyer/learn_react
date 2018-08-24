@@ -1,6 +1,13 @@
+/**
+ * VisibilityFilters.SHOW_ALL 是一个 filter 和 redux 无关.
+ * 是一个具体的选项值.
+ */
+
 import React from 'react'
 import FilterLink from '../containers/FilterLink'
 import { VisibilityFilters } from '../actions'
+
+
 
 const Footer = () => (
   <div>
