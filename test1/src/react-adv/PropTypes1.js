@@ -28,14 +28,14 @@ MyComponent.propTypes = {
     // 你可以声明 prop 是特定的值，类似于枚举
     optionalEnum: PropTypes.oneOf(['News', 'Photos']),
   
-    // 一个对象可以是多种类型其中之一
+    // 可以是多种类型其中之一
     optionalUnion: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
       PropTypes.instanceOf(Message)
     ]),
   
-    // 一个某种类型的数组
+    // 一个某种类型的数组，元素类型必须是指定的类型
     optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
   
     // 属性值为某种类型的对象
@@ -55,7 +55,7 @@ MyComponent.propTypes = {
   
     // 你也可以声明自定义的验证器。如果验证失败返回 Error 对象。不要使用 `console.warn` 或者 throw ，
     // 因为这不会在 `oneOfType` 类型的验证器中起作用。
-    customProp: function(props, propName, componentName) {
+    customProp: function(props, propName, componentName) {  //3个参数，props对象，props属性名，组件名
       if (!/matchme/.test(props[propName])) {
         return new Error(
           'Invalid prop `' + propName + '` supplied to' +

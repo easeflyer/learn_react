@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+
+
+/**两个输入，一个是摄氏度，一个是华氏温度 */
 // 只负责渲染 提示
 function BoilingVerdict(props) {
     if (props.celsius >= 100) {
@@ -10,14 +13,16 @@ function BoilingVerdict(props) {
 }
 
 // 三个温度转换 函数
+//华氏温度转摄氏度
 function toCelsius(fahrenheit) {
     return (fahrenheit - 32) * 5 / 9;
 }
-
+//摄氏度转华氏温度
 function toFahrenheit(celsius) {
     return (celsius * 9 / 5) + 32;
 }
 
+//温度的取整
 function tryConvert(temperature, convert) {
     const input = parseFloat(temperature);
     if (Number.isNaN(input)) {

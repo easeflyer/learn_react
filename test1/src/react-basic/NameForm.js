@@ -16,7 +16,7 @@ class NameForm extends React.Component {
   
     handleSubmit(event) {
       alert('A name was submitted: ' + this.state.value);
-      event.preventDefault(); // 组织默认动作。
+      event.preventDefault(); // 阻止默认动作。
     }
   
     render() {
