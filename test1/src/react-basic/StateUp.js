@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+/**利用组件和props传递，把数据保存在最外层组件，让内部的后代组件都可以访问 */
 function BoilingVerdict(props) {
     if (props.celsius >= 100) {
         return <p>水会烧开</p>;
