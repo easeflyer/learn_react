@@ -4,21 +4,27 @@
   "private": true,
   "homepage": "http://192.168.0.10/build",
   "dependencies": {
-    "antd": "^3.5.1",
-    "antd-mobile": "^2.1.8",
+    "antd": "^3.8.2",
+    "antd-mobile": "^2.2.3",
     "rc-queue-anim": "^1.5.0",
     "rc-tween-one": "^2.2.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-loadable": "^5.4.0",
-    "react-router": "^4.2.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.4.1"
   }
 }

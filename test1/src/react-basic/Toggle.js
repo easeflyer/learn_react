@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+/*
+每个框架都有自己的事件系统，jq的click，vue的v-on：click，而react的事件绑定采用驼峰式命名，函数需要{}包裹 
+*/
 class Toggle extends React.Component {
     constructor(props) {
         super(props);
         this.state = { isToggleOn: true };
 
         // This binding is necessary to make `this` work in the callback
-        // 注意这里 给 handleClick bind 了this 因为他是个
+        // 注意这里 给 handleClick bind 了this 因为它内部的this指向undefined
         this.handleClick = this.handleClick.bind(this);
     }
 
