@@ -69,7 +69,7 @@ class Parent extends React.Component {
 function Child() {
   // The click event on this button will bubble up to parent,
   // because there is no 'onClick' attribute defined
-  // 注意这个 button 的 click 事件，冒泡到了，其父组件，也就是上面的 有 onClick 的 div
+  // 注意这个 button 的 click 事件，冒泡到了，其父组件，也就是上面的有 onClick 的 div
   // 虽然从 dom 结构上 button 并不是 上面的div 的子组件。但是他是 parent react 组件的子组件。
   return (
     <div className="modal">

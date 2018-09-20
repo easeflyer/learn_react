@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './c.css' // 引入 css 注意路径的对应关系，是从当前文件开始的。
 /**
- * 组件定义的原则是：复用，因此尽可能拆分组件，而不要把功能写到一个复杂的组件中
+ * 组件定义的原则是：复用，因此尽可能抽离出复用组件，再由小组件组合成大型组件，而不要把功能写到一个复杂的组件中
  */
 
 
@@ -17,16 +17,16 @@ function formatDate(date) {
 // 头像 Avatar 组件
 function Avatar(props) {
     return (
-        <img className="Avatar"
+        <img className="Avatar"             //与vue的规则相同，返回的jsx必须有且只有一个根元素，不可出现元素并列
             src={props.user.avatarUrl}     // 组件的 user 属性是一个对象，包含2个属性
-            alt={props.user.name} />
+            alt={props.user.name} />        //组件的props对象是指定义在组件jsx语法上(如<Avatar user={...} />)的属性集合
     );
 }
 // 用户信息  组件
 function UserInfo(props) {                 // 这里也用到了 user 属性。并且把user 属性 直接复制给了子组件 Avatar
-    return (
+    return (    
         <div className="UserInfo">
-            <Avatar user={props.user} />    
+            <Avatar user={props.user} />        
             <div className="UserInfo-name">
                 {props.user.name}
             </div>
@@ -59,7 +59,7 @@ const comment = {
         avatarUrl: 'http://placekitten.com/g/64/64'
     }
 };
-// 整个 父子关系 虽然比较绕，但是结构还是比较简单清晰的。
+
 ReactDOM.render(
     <Comment
         date={comment.date}
@@ -67,3 +67,17 @@ ReactDOM.render(
         author={comment.author} />,
     document.getElementById('root')
 );
+/*
+组件关系
+Comment组件 --props等价于comment  
+
+    --UserInfo组件 --props等价于对象{
+                                user：{
+                                    name: 'Hello Kitty',
+                                    avatarUrl: 'http://placekitten.com/g/64/64'
+                                    }
+                                }   
+                                
+                                
+        --Avatar组件 --props与父组件相同
+*/

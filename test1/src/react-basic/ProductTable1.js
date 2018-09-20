@@ -170,3 +170,130 @@ ReactDOM.render(
     <FilterableProductTable products={PRODUCTS} />,
     document.getElementById('root')
 );
+
+/* 不同于以上案列的代码，同样的设计，不同的书写方法，仅供参考，去掉注释即可使用
+
+var arr = [
+    { category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football" },
+    { category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball" },
+    { category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball" },
+    { category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch" },
+    { category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5" },
+    { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" }
+];
+//官网的黄色组件，最顶层组件
+class Yellow extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state={search:"",check:false}
+    }
+    searchChange(val){
+        this.setState({search:val})
+    }
+    checkChange(val){
+        this.setState({check:val})
+    }
+    render() {
+        return (
+            <div>
+                <Blue methods={this.searchChange.bind(this)}  check={this.state.check} changemethods={this.checkChange.bind(this)}/>
+                <Green arr={this.props.arr} search={this.state.search} check={this.state.check}/>
+            </div>
+        )
+    }
+}
+//上方蓝色输入框和单选框组件
+class Blue extends React.Component {
+    constructor(props) {
+        super(props)
+        
+    }
+    searchChange(e){
+        this.props.methods(e.target.value)
+    }
+    checkChange(){
+        this.props.changemethods(!this.props.check)
+    }
+    render() {
+        return (
+            <form>
+                <input type="text" placeholder="Search..." onChange={this.searchChange.bind(this)} />
+                <p>
+                    <input type="checkbox" checked={this.props.check} onChange={this.checkChange.bind(this)}/>
+                    {' '}
+                    Only show products in stock
+                </p>
+            </form>
+        )
+    }
+}
+//绿色框，选染列表的顶层组件
+class Green extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return (
+            <div>
+                <span>Name</span>
+                <span>Price</span>
+                <Red arr={this.props.arr} search={this.props.search} check={this.props.check}/>
+            </div>
+        )
+    }
+}
+//商品分类标题组件
+class ShadowGreen extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return <p>{this.props.text}</p>
+    }
+}
+//渲染列表父组件，加上了商品列表标题
+class Red extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {       
+        const x = this.props.arr.concat().map((ele) => ele.category)       
+        const cate = Array.from(new Set(x));
+        return (
+            <div>
+                <ShadowGreen text={"sporting goods"} />
+                <Redmin arr={this.props.arr} cate={cate[0]} search={this.props.search} check={this.props.check}/>
+                <ShadowGreen text={"electronics"} />
+                <Redmin arr={this.props.arr} cate={cate[1]} search={this.props.search} check={this.props.check}/>
+            </div>
+        )
+    }
+}
+//渲染列表组件
+class Redmin extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        const search=this.props.search;
+        const arr = this.props.arr.concat();
+        var arrele = arr.filter((ele) => ele.category === this.props.cate&&ele.name.indexOf(search)>=0); 
+        if(this.props.check){
+            arrele=arr.filter((ele) => ele.category === this.props.cate&&ele.name.indexOf(search)>=0&&ele.stocked);
+        }     
+         
+        const arreledom = arrele.map((ele) =>
+            <li>
+                <span>{ele.name}</span>
+                <span>{ele.price}</span>
+            </li>)
+        return (
+            <ul>{arreledom}</ul>
+        )
+    }
+}
+ReactDOM.render(
+    <Yellow arr={arr} />,
+    document.getElementById('app')
+)
+*/

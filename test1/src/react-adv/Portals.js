@@ -25,7 +25,7 @@ class Modal extends React.Component {
   componentDidMount() {
     // Append the element into the DOM on mount. We'll render
     // into the modal container element (see the HTML tab).
-    // 这个组件在挂在前 首先把一个 div 挂在到 modalRoot 上面。下载前移除。
+    // 这个组件在挂在前 首先把一个 div 挂在到 modalRoot 上面。卸载前移除。
     modalRoot.appendChild(this.el);
   }
 
@@ -36,7 +36,8 @@ class Modal extends React.Component {
   
   render() {
     // Use a portal to render the children into the element
-    // 用 portal 把本组件的所有孩子几点，渲染到上面定义的 div 中。
+    // 用 portal 把本组件的所有子节点，渲染到上面定义的 div 中。
+    // 注意ReactDOM.createPortal的格式
     return ReactDOM.createPortal(
       // Any valid React child: JSX, strings, arrays, etc.
       this.props.children,
@@ -98,3 +99,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, appRoot);
+//总结，在root元素中存在react组件树，其中一个组件将一个jsx元素插入到了modal-root元素中，而这个jsx具有完整的react功能

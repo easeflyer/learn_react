@@ -17,7 +17,7 @@ Greeting.defaultProps = {
 };
 
 Greeting.propTypes = {
-    name: PropTypes.string.isRequired, // name 属性必须
+    name: PropTypes.string.isRequired, // 加上isRequired表示name 属性必须由父组件提供
     age: PropTypes.string,
     children: PropTypes.element.isRequired,
     //requiredFunc: PropTypes.name.isRequired,

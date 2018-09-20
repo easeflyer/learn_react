@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // warning 提示组件 如果组件属性为false 则不不显示 warning
 function WarningBanner(props) {
     if (!props.warn) {
-        return null; // 注意组件本身 返回 null 即可组织组件渲染。如果是  class 定义的组件 render 方法返回 null
+        return null; // 注意组件本身 返回 null 即可阻止组件渲染。如果是  class 定义的组件 render 方法返回 null
     }
 
     return (
