@@ -42,15 +42,26 @@ import registerServiceWorker from './registerServiceWorker';
 //import './antd-m/LoadModule/App'          // 这是一个程序框架，测试动态加载。
 //import './react-adv/ReactRouter/Router1'           // 测试路由功能。
 //import './react-adv/Loadable/App'           // 动态加载测试，根据不同的条件，加载模块。可以考虑不用路由的功能。 直接用文件夹组织模块即可。
+// 高阶组件 高阶函数 非常重要 参考 react-adv/HigherOrderComponect 以及官方案例
 
 //import './react-adv/Portals'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
 //import './react-adv/Portals1'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
 //import './react-adv/Portals2'                 // 参考 sifou 一步 教程：组件通信
 //import './react-adv/Context1'                // react 16.3 开始对 Context 进行了官方的正式版本支持。 比redux 更加轻量级，实现跨等级的数据通讯。
+//import './react-adv/context/context-redux/index' // 基于 react-router 和 context 的 react 极简框架。（参考：context/demo1/app.js）
+
+
+// context 专门案例
+// import './context/demo1/app.js'             // context 使用分析 （基础应用，考虑和 redux 的关系）
+// import './context/demo2/app.js'             // context 使用分析 （基础应用，考虑和 redux 的关系）
+// 同时使用多个 context 案例比较简单 见官方文档 http://react.css88.com/docs/context.html#dynamic-context 
+//import './context/demo3/app.js'             // 在 生命周期函数里 使用 context **重要
+
+
 
 // Es6 语法测试相关
 
-import './es6/import/import1'
+//import './es6/import/import1'
 
 
 
@@ -81,7 +92,7 @@ import './es6/import/import1'
 //import './antd/IconFont'                // IconFont 本地部署
 
 // 以下是动画相关的组件
-//import './reactmotion/TweenOne'        // 有问题。
+import './reactmotion/TweenOne'        // 有问题。
 //import './react-motion/motion'
 //import './reactmotion/motion1'
 

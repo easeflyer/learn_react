@@ -17,7 +17,7 @@ class Login extends React.Component {
   /**
    * 登录模拟
    * 登录，然后2秒后执行回调 setState 本页面被重新渲染。
-   * 判断 redirectToReferrer 渲染 from 也就是返回之前的页面。 
+   * 判断 redirectToReferrer 渲染from 也就是返回之前的页面。 
    * 
    * props.location : {pathname: "/category/shoes", search: "", hash: "", state: undefined, key: "9rrh7p"}
    *    通常用 state 来保存，从哪里来到的 当前路径。
