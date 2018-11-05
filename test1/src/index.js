@@ -92,13 +92,25 @@ import registerServiceWorker from './registerServiceWorker';
 //import './antd/IconFont'                // IconFont 本地部署
 
 // 以下是动画相关的组件
-import './reactmotion/TweenOne'        // 有问题。
+//import './reactmotion/TweenOne'        // 有问题。
 //import './react-motion/motion'
 //import './reactmotion/motion1'
 
 
 // 下面是组合案例
 //import './antd-m/LoadModule/App'        // 这是一个程序框架，测试动态加载。
+
+
+
+/**
+ * Mobx 案例
+ */
+
+ import "./Mobx/01/todolist"
+
+
+
+
 
 
 
