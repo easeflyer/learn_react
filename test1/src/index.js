@@ -40,7 +40,7 @@ import registerServiceWorker from './registerServiceWorker';
 //import './react-adv/Ref'                   // Ref 基本应用。
 //import './react-adv/ImportThen'           // 使用的是 importThen 方法。
 //import './antd-m/LoadModule/App'          // 这是一个程序框架，测试动态加载。
-//import './react-adv/ReactRouter/Router1'           // 测试路由功能。
+//import './react-adv/ReactRouter/Router1'  // 测试路由功能。
 //import './react-adv/Loadable/App'           // 动态加载测试，根据不同的条件，加载模块。可以考虑不用路由的功能。 直接用文件夹组织模块即可。
 // 高阶组件 高阶函数 非常重要 参考 react-adv/HigherOrderComponect 以及官方案例
 
@@ -48,7 +48,7 @@ import registerServiceWorker from './registerServiceWorker';
 //import './react-adv/Portals1'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
 //import './react-adv/Portals2'                 // 参考 sifou 一步 教程：组件通信
 //import './react-adv/Context1'                // react 16.3 开始对 Context 进行了官方的正式版本支持。 比redux 更加轻量级，实现跨等级的数据通讯。
-//import './react-adv/context/context-redux/index' // 基于 react-router 和 context 的 react 极简框架。（参考：context/demo1/app.js）
+import './react-adv/context/context-redux/index' // 基于 react-router 和 context 的 react 极简框架。（参考：context/demo1/app.js）
 
 
 // context 专门案例
@@ -106,11 +106,16 @@ import registerServiceWorker from './registerServiceWorker';
  * Mobx 案例
  */
 
- import "./Mobx/01/todolist"
+ //import "./Mobx/01/timer";              // 入门案例１
+ //import "./Mobx/01/todolist"              // 入门案例２
 
+ //import "./Mobx/02/promise"             // 用 @action 解决回调修改 state
+ //import "./Mobx/02/promise1";           // 用 action() 解决回调函数修改 state
+ //import "./Mobx/02/promise2async_await";// async/await 解决回调修改 state
+ //import "./Mobx/02/promise3flow_yield"; // Mobx flow 解决异步函数的回调 修改state
 
-
-
+ //import "./Mobx/03/observableObj";        // 关于 autorun 的清理和 obserable.object 
+ //import "./Mobx/03/stateUi";
 
 
 
