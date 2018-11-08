@@ -3,6 +3,8 @@
  * 核心概念。
  * 单独保存 Model 用于保存整个应用的 状态数据。
  * 用 connect 本例叫 ctx 函数包装一个组件。并返回新组件。
+ * 
+ * 半年后注释：参考 MobX 库的设计，这个框架比较简单，可以用 MobX 替换。
  */
 
 import React from 'react'
