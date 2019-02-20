@@ -61,7 +61,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 // Es6 语法测试相关
-import './es6/import/import1'
+//import './es6/import/import1'
 //redux状态管理工具
 //import './react-adv/redux/basic'                    //基础示例，同步更新。建议直接看例子
 //import './react-adv/redux/async'                    //异步数据流，网络请求
@@ -82,15 +82,16 @@ import './es6/import/import1'
 //import './antd-m/ListView_1'          // 长列表 官方案例 附带详细说明
 //import './antd-m/ListView_2'          // 自定义长列表
 //import './antd-m/Menu.js'             // 菜单(也包含多级菜单)
-//import './antd-m/Menu1.js'              // 菜单 多级菜单
+//import './antd-m/Menu1.js'            // 菜单 多级菜单
 //import './antd-m/Drawer'              // 抽屉菜单 菜单项由 List 构造
-//import './antd-m/Drawer_1'              // 抽屉菜单 菜单项由 List 构造
-//import './antd-m/List'                  // 列表组件
+//import './antd-m/Drawer_1'            // 抽屉菜单 菜单项由 List 构造
+//import './antd-m/List'                // 列表组件
 //import './antd-m/TabBar'
 //import './antd/Table'                 // 一个普通的表格
 //import './antd/Table1'                  // 用到了 column 和 columngroup 组件
 //import './antd/Table2'
 //import './antd/IconFont'                // IconFont 本地部署
+import './antd/upload'                  // 文件上传
 
 // 以下是动画相关的组件
 //import './reactmotion/TweenOne'        // 有问题。
@@ -104,7 +105,7 @@ import './es6/import/import1'
 
 // 下面是一些动画相关的
 //import './ant-motion/TweenOne'
-import './ant-motion/timeline'
+//import './ant-motion/timeline'
 
 
 //ReactDOM.render(<App />, document.getElementById('app'));

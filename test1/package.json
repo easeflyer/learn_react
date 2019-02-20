@@ -2,6 +2,7 @@
   "name": "test1",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://192.168.0.112",
   "homepage": "http://192.168.0.10/build",
   "dependencies": {
     "core-js": "^2.5.7",
