@@ -3,7 +3,7 @@
  * 在祖先范围 使用 <CtxPname.Provider value={this.state.name} > 子元素 </CtxPname.Provider> 提供数据。
  * 然后可以在任何级别子元素中使用 <CtxPname.Consumer> 回调函数 </CtxPname.Consumer> 跨级别获得数据。
  * 
- * 注意除非你明确你的设计必须要用Context 否则请使用 state + props 传递数据。
+ * 注意除非你明确你的设计必须要用Context 否则请使用 state + props 传递数据。 controller
  */
 
 import React from 'react';

@@ -7,22 +7,39 @@ const Model = {
   App2Model,
 }
 
-const AppCtx = React.createContext(Model)
+// const AppCtx = React.createContext(Model)
 
 
 /**
  * 1) 把全局 store 传递给 Controller 的 props
  * 2) 把 Route 传递过来的 props 合并到 Controller
  */
+// const ctx = (Controller) => {
+//   const Re = (props) => (
+//     <AppCtx.Provider value={Model}>
+//       <AppCtx.Consumer>
+//         {(store) => <Controller {...store} {...props} />}
+//       </AppCtx.Consumer>
+//     </AppCtx.Provider>
+//   )
+//   return Re;
+// }
+
 const ctx = (Controller) => {
-  const Re = (props) => (
-    <AppCtx.Provider value={Model}>
-      <AppCtx.Consumer>
-        {(store) => <Controller {...store} {...props} />}
-      </AppCtx.Consumer>
-    </AppCtx.Provider>
-  )
-  return Re;
+  class Ctx extends React.Component{
+    constructor() {
+      super()
+      this.dummyState = {}
+    }
+    onStateChange = () => {
+      this.setState(this.dummyState)
+    }
+    render(){
+      return <Controller {...Model} {...this.props} onStateChange={this.onStateChange}/>
+    }
+  }
+
+  return Ctx;
 }
 
 

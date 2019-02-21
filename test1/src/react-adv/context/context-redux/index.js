@@ -1,15 +1,23 @@
+/**
+ * 这个例子是 对 redux 的一个模拟。
+ * 核心概念。
+ * 单独保存 Model 用于保存整个应用的 状态数据。
+ * 用 connect 本例叫 ctx 函数包装一个组件。并返回新组件。
+ * 
+ * 半年后注释：参考 MobX 库的设计，这个框架比较简单，可以用 MobX 替换。
+ */
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import App1 from './controller/App1'
 import App2 from './controller/App2'
+import { ctx } from './model/Model';
 import Model from './model/Model';
-
-const AppCtx = React.createContext(Model);
-const { Provider, Consumer } = AppCtx;
 
 class App extends React.Component {
   render() {
+    const Appctx = ctx(  (props)=><App1 model={Model.App1Model} {...props} />   );
     return (
       <div>
         <nav>
@@ -19,15 +27,10 @@ class App extends React.Component {
             <li><Link to="/app2">应用2</Link></li>
           </ul>
         </nav>
-        <Consumer>
-          {(Model)=>(
-            <div>
             <Route path="/" exact={true} render={() => <h3>home</h3>} />
-            <Route path="/app1" component={(props)=><App1 model={Model.App1Model} {...props} />} />
-            <Route path="/app2" component={(props)=><App2 model={Model.App2Model} {...props} />} />
-            </div>
-          )}
-        </Consumer>
+            {/* <Route path="/app1" render={(props)=><App1 model={Model.App1Model} {...props} />} /> */}
+            <Route path="/app1" render={()=><Appctx />} />
+            <Route path="/app2" render={(props)=><App2 model={Model.App2Model} {...props} />} />
       </div>
     )
   }
@@ -36,9 +39,7 @@ class App extends React.Component {
 
 
 ReactDOM.render(
-  <Provider value={Model}>
     <BrowserRouter>
       <App />
-    </BrowserRouter>
-  </Provider>,
+    </BrowserRouter>,
   document.getElementById('root'));
