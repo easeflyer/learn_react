@@ -34,7 +34,7 @@ import { observer } from "mobx-react";
 /**
  * 一个普通的 Promise 函数案例，参考  Promise 相关文档。
  */
-function p1(resolve, reject) {
+function getRemoteData(resolve, reject) {
   var timeOut = Math.random() * 2;
   console.log('set timeout to: ' + timeOut + ' seconds.');
   setTimeout(function () {
@@ -49,8 +49,8 @@ function p1(resolve, reject) {
 }
 // fetchGithubProjectsSomehow 函数返回一个 Promise 对象。
 // somePreprocessing 处理返回数据
-const fetchGithubProjectsSomehow = ()=>new Promise(p1);
-const somePreprocessing = (projects)=>['aaa','bbb','ccc',projects];
+const fetchGithub = () => new Promise(getRemoteData);
+const somePreprocessing = (projects) => ['aaa', 'bbb', 'ccc', projects];
 
 
 
@@ -72,7 +72,7 @@ class Store {
   async fetchProjects() {
     this.githubProjects = []
     this.state = "pending"
-    fetchGithubProjectsSomehow().then(
+    fetchGithub().then(
 
       // 用 action() 包裹完整回调解决
       // action('fetchProjectsSuccess',(projects)=>{
@@ -87,18 +87,21 @@ class Store {
       //用 runInAction 解决
       // 它只是 action(f)() 的语法糖
       projects => {
+        alert(projects);
         const filteredProjects = somePreprocessing(projects)
-        runInAction(()=>{
+        runInAction(() => {
           this.githubProjects = filteredProjects
           this.state = "done"
         });
+        return 11;
       },
       error => {
-        runInAction(()=>{
+        runInAction(() => {
           this.state = "error"
         });
+        return 22;
       }
-    )
+    ).then((data) => { alert(data) })
   }
 
   /**
@@ -117,13 +120,45 @@ class Store {
   // }
 }
 
-const GitView = ({pro})=>(
+const GitView = ({ pro }) => (
   <div>
     <ul>
-    {pro.githubProjects.map((item,key)=><li key={key}>{item}</li>)}
+      {pro.githubProjects.map((item, key) => <li key={key}>{item}</li>)}
     </ul>
     <button onClick={pro.fetchProjects}>点击</button>
   </div>
 );
 const ObGitView = observer(GitView);
 ReactDOM.render(<ObGitView pro={new Store()} />, document.getElementById('root'));
+
+
+
+
+/*
+
+异步函数
+asyncFun(resolve, reject){
+  aaa = 访问网络
+  if 成功 resolve(data1)
+  if 失败 reject(data2)
+}
+
+Promise(asyncFun)
+.then(
+  (data1)=>{
+    alert(data1);
+    return data11
+  },
+  (data2)=>{alert(data2)}
+)
+.then(
+  (data11)=>{
+    alert(data11)
+  },
+  (data22)=>{alert(data2)}
+)
+
+
+注意对 promise 的理解：
+1）promise 对象是自动执行的，但不会立即返回结果。
+ */

@@ -12,7 +12,7 @@ import commonStore from './App/stores/commonStore';
 
 const stores = {
   testStore,
-  commonStore
+  commonStore,
 };
 
 // For easier debugging
@@ -20,9 +20,13 @@ window._____APP_STATE_____ = stores;
 
 //promiseFinally.shim();
 //useStrict(true);
-
+// <Provider testStore=testStore conmmonStore=conmmonStore>
+// const {a,b,c} = {...stores}
+// const props = {...stores}
+// <Provider props> 
 ReactDOM.render((
-  <Provider {...stores}>
+  // <Provider stores={stores}> 
+  <Provider {...stores}> 
     <BrowserRouter>
       <App />
     </BrowserRouter>

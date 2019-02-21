@@ -48,7 +48,22 @@ import registerServiceWorker from './registerServiceWorker';
 //import './react-adv/Portals1'                // 插槽：把组件挂在到 外部 dom 节点上，跳出父元素
 //import './react-adv/Portals2'                 // 参考 sifou 一步 教程：组件通信
 //import './react-adv/Context1'                // react 16.3 开始对 Context 进行了官方的正式版本支持。 比redux 更加轻量级，实现跨等级的数据通讯。
-import './react-adv/context/context-redux/index' // 基于 react-router 和 context 的 react 极简框架。（参考：context/demo1/app.js）
+//import './react-adv/context/context-redux/index' // 基于 react-router 和 context 的 react 极简框架。（参考：context/demo1/app.js）
+
+/**
+ * 组件的几个模式 ComponentPatterns
+ * 参考网址：https://segmentfault.com/a/1190000014537140
+ *   - 有状态组件 X 无状态组件
+ *   - 容器组件 X 展示组件
+ *   - 高阶组件 -- HOCs
+ *   - 渲染回调 -- Render Callbacks(Function as Child Components)
+ */
+//import './react-adv/ComponentPatterns/App'
+
+// Hooks
+import './react-adv/Hooks/App'
+
+
 
 
 // context 专门案例
@@ -56,7 +71,6 @@ import './react-adv/context/context-redux/index' // 基于 react-router 和 cont
 // import './context/demo2/app.js'             // context 使用分析 （基础应用，考虑和 redux 的关系）
 // 同时使用多个 context 案例比较简单 见官方文档 http://react.css88.com/docs/context.html#dynamic-context 
 //import './context/demo3/app.js'             // 在 生命周期函数里 使用 context **重要
-
 
 
 // Es6 语法测试相关
@@ -117,6 +131,18 @@ import './react-adv/context/context-redux/index' // 基于 react-router 和 cont
 
  //import "./Mobx/03/observableObj";        // 关于 autorun 的清理和 obserable.object 
  //import "./Mobx/03/stateUi";
+//import "./Mobx/03/testApp";
+
+/**
+ * Daemon 守护进程案例
+ * 利用长轮寻实现 基于 协程的守护进程。
+ */
+
+//import "./daemon-demo/index";
+
+// 关于 React 组件的模块化，解耦的设计分析。
+//import './react-adv1/module/index'
+
 
 
 
