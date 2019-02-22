@@ -6,7 +6,7 @@ import './index.less'; // 如果设置了内部的 字体更换，这里可以�
 import registerServiceWorker from './registerServiceWorker';
 //import App from './App';
 //初级部分
-//import './react-basic/reactbasic.js'       // react基础知识
+import './react-basic/reactbasic.js'       // react基础知识
 //import './react-basic/Componentbasic.js'   // 定义组件的方法
 //import './react-basic/Component';          // 组件抽离与props
 //import './react-basic/state.js'            // 组件的生命周期函数与状态,时钟例子
@@ -91,7 +91,7 @@ import registerServiceWorker from './registerServiceWorker';
 //import './antd/Table1'                  // 用到了 column 和 columngroup 组件
 //import './antd/Table2'
 //import './antd/IconFont'                // IconFont 本地部署
-import './antd/upload'                  // 文件上传
+//import './antd/upload'                  // 文件上传
 
 // 以下是动画相关的组件
 //import './reactmotion/TweenOne'        // 有问题。
