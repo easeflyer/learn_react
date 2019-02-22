@@ -37,6 +37,7 @@ import './react-basic/reactbasic.js'       // react基础知识
 //import './react-adv/PropTypes'             // 类型检查实例
 //import './react-adv/PropTypes1'            // 完整的PropTypes检查类型
 //import './react-adv/Ref'                   // Ref 基本应用与非受控组件。
+//import './react-adv/Ref1'                   // Ref 基本应用。
 //import './react-adv/Context'               // 跨级快速传递props--Context
 //import './react-adv/Fragments'             // Fragmens片段
 //import './react-adv/Portals'               // 插槽：把组件挂在到外部dom节点上，跳出父元素
@@ -59,6 +60,35 @@ import './react-basic/reactbasic.js'       // react基础知识
 //import './react-adv/ReactRouter/sidebar'      //侧边栏--多位置映射路由
 //import './react-adv/ReactRouter/Router' 
 
+// 高阶组件 高阶函数 非常重要 参考 react-adv/HigherOrderComponect 以及官方案例
+//import './react-adv/context/context-redux/index' // 基于 react-router 和 context 的 react 极简框架。（参考：context/demo1/app.js）
+
+/**
+ * 组件的几个模式 ComponentPatterns
+ * 参考网址：https://segmentfault.com/a/1190000014537140
+ *   - 有状态组件 X 无状态组件
+ *   - 容器组件 X 展示组件
+ *   - 高阶组件 -- HOCs
+ *   - 渲染回调 -- Render Callbacks(Function as Child Components)
+ */
+//import './react-adv/ComponentPatterns/App'
+
+// Hooks
+import './react-adv/Hooks/App'
+
+
+
+
+// context 专门案例
+// import './context/demo1/app.js'             // context 使用分析 （基础应用，考虑和 redux 的关系）
+// import './context/demo2/app.js'             // context 使用分析 （基础应用，考虑和 redux 的关系）
+// 同时使用多个 context 案例比较简单 见官方文档 http://react.css88.com/docs/context.html#dynamic-context 
+//import './context/demo3/app.js'             // 在 生命周期函数里 使用 context **重要
+
+
+// Es6 语法测试相关
+
+//import './es6/import/import1'
 
 // Es6 语法测试相关
 //import './es6/import/import1'
@@ -106,6 +136,36 @@ import './react-basic/reactbasic.js'       // react基础知识
 // 下面是一些动画相关的
 //import './ant-motion/TweenOne'
 //import './ant-motion/timeline'
+
+
+/**
+ * Mobx 案例
+ * 路由相关案例：https://github.com/kitze/mobx-router
+ */
+
+ //import "./Mobx/01/timer";              // 入门案例１
+ //import "./Mobx/01/todolist"              // 入门案例２
+
+ //import "./Mobx/02/promise"             // 用 @action 解决回调修改 state
+ //import "./Mobx/02/promise1";           // 用 action() 解决回调函数修改 state
+ //import "./Mobx/02/promise2async_await";// async/await 解决回调修改 state
+ //import "./Mobx/02/promise3flow_yield"; // Mobx flow 解决异步函数的回调 修改state
+
+ //import "./Mobx/03/observableObj";        // 关于 autorun 的清理和 obserable.object 
+ //import "./Mobx/03/stateUi";
+//import "./Mobx/03/testApp";
+
+/**
+ * Daemon 守护进程案例
+ * 利用长轮寻实现 基于 协程的守护进程。
+ */
+
+//import "./daemon-demo/index";
+
+// 关于 React 组件的模块化，解耦的设计分析。
+//import './react-adv1/module/index'
+
+
 
 
 //ReactDOM.render(<App />, document.getElementById('app'));

@@ -32,7 +32,6 @@ const Category = ({ match }) => {
     <li><Link to={`${match.url}/shoes`}>Shoes</Link></li>
     <li><Link to={`${match.url}/boots`}>Boots</Link></li>
     <li><Link to={`${match.url}/footwear`}>Footwear</Link></li>
-
   </ul>
     {/* match.url : /category/boots  match.path : /category/:name 注意区分用途 */}
     {/* <Route path={`${match.path}/:name`} render={({ match }) => (<div> <h3> {match.params.name} </h3></div>)} /> */}

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import TweenOne from 'rc-tween-one';
-
+import './demo.css';
 
 class Demo1 extends React.Component {
     state = {
@@ -40,7 +40,16 @@ class Demo1 extends React.Component {
         )
     }
 }
-
+/**
+ * state 保存 animation lef, top
+ * 按钮 出发修改 left, top state
+ * 
+ * 动画解析：
+ *  animation: { left: 100, top: 100 } 决定了目标位置
+ *  style={{ position: 'absolute', top: '10px', left: '10px' }} 是动画元素起始的位置。
+ *  他只是一个单纯的 div 需要有绝对定位才能动。
+ * 
+ */
 class Demo extends React.Component {
     state = {
         animation: { left: 100, top: 100 }
@@ -75,6 +84,34 @@ class Demo extends React.Component {
     }
 }
 
+/**
+ * 官方案例
+ * style className 都是 div 的默认样式和位置
+ * 而 animation 则是目标位置和样式
+ */
+function Demo3(props) {
+  return (
+    <TweenOne
+      animation={{
+        x: 80,
+        scale: 0.5,
+        rotate: 120,
+        yoyo: true, // demo 演示需要
+        repeat: -1, // demo 演示需要
+        duration: 1000
+      }}
+      paused={props.paused}
+      style={{ transform: 'translateX(-80px)' }}
+      className="code-box-shape"
+    />
+  );
+}
+
+Demo3.propTypes = {
+  children: PropTypes.any,
+  className: PropTypes.string,
+  paused: PropTypes.bool,
+};
 
 
-ReactDOM.render(<Demo1 />, document.getElementById('root'));
+ReactDOM.render(<Demo3 />, document.getElementById('root'));
