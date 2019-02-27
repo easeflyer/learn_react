@@ -74,8 +74,10 @@ import './react-basic/reactbasic.js'       // react基础知识
 //import './react-adv/ComponentPatterns/App'
 
 // Hooks
-import './react-adv/Hooks/App'
-
+//import './react-adv/Hooks/useState'
+import './react-adv/Hooks/useEffect'
+//import './react-adv/Hooks/useEffect1'
+//import './react-adv/Hooks/useEffectTest1'  // 一个练习
 
 
 
