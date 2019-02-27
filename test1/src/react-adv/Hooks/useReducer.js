@@ -2,7 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { useReducer } from 'react';
 
-const initialState = {count: 0};
+const initialCountState = {count: 0};
+
+/**
+ * 输入旧state 根据 action 返回新 state。这就是 reducer 的作用。
+ * @param {*} state   输入的 state
+ * @param {*} action  根据action 返回新的 state
+ */
 
 function reducer(state, action) {
   switch (action.type) {
@@ -13,17 +19,21 @@ function reducer(state, action) {
     case 'decrement':
       return {count: state.count - 1};
     default:
-      // A reducer must always return a valid state.
-      // Alternatively you can throw an error if an invalid action is dispatched.
       return state;
   }
+}
+
+// useReducer 的第三个参数 是一个函数。输入初始的 state 输出一个新的 state
+// 这个函数会最初被执行，替换了初始 state 值。
+function init(initialCountState) {
+  return {count: initialCountState};
 }
 
 function Counter({initialCount}) {
   const [state, dispatch] = useReducer(
     reducer,
-    initialState,
-    ()=>({count:1})
+    initialCount,
+    init
   );
 
   return (
@@ -43,3 +53,7 @@ const App = props => <div>
 </div>
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+
+// 当你涉及多个子值的复杂 state(状态) 逻辑时，useReducer 通常优于 useState 
+// 根据不同的 action 返回了不同的 新 state
