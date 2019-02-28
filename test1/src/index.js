@@ -42,8 +42,8 @@ import './react-basic/reactbasic.js'       // react基础知识
 //import './react-adv/Fragments'             // Fragmens片段
 //import './react-adv/Portals'               // 插槽：把组件挂在到外部dom节点上，跳出父元素
 //import './react-adv/Portals1'              // 插槽：捕获外部dom触发的事件冒泡
-//import './react-adv/Portals2'                 // 参考 sifou 一步 教程：组件通信
-//import './react-adv/Context1'                // react 16.3 开始对 Context 进行了官方的正式版本支持。 比redux 更加轻量级，实现跨等级的数据通讯。
+//import './react-adv/Portals2'              // 参考 sifou 一步 教程：组件通信
+//import './react-adv/Context1'              // react 16.3 开始对 Context 进行了官方的正式版本支持。 比redux 更加轻量级，实现跨等级的数据通讯。
 //import './react-adv/Advance'               // 高阶组件
 //import './react-adv/ImportThen'            // 使用的是 importThen 方法。
 //import './antd-m/LoadModule/App'           // 这是一个程序框架，测试动态加载。
@@ -74,10 +74,15 @@ import './react-basic/reactbasic.js'       // react基础知识
 //import './react-adv/ComponentPatterns/App'
 
 // Hooks
+//import './react-adv/Hooks/App'
+//import './react-adv/Hooks/App1'                 //PureComponent 局部刷新
 //import './react-adv/Hooks/useState'
-import './react-adv/Hooks/useEffect'
-//import './react-adv/Hooks/useEffect1'
-//import './react-adv/Hooks/useEffectTest1'  // 一个练习
+//import './react-adv/Hooks/useReducer'
+//import './react-adv/Hooks/useMemo';
+import './react-adv/Hooks/useCallback2';
+//import './react-adv/Hooks/useContext'
+
+
 
 
 
