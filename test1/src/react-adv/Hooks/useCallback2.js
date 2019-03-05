@@ -2,17 +2,40 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
+/*
+本案例知识点：
+避免“昂贵的组件”重新渲染。
+
+Com1，Com2 是两个组件。
+他们都渲染了一个 “昂贵的组件”。
+通过 useCallback 避免了重新生成 fn1 callback 函数。因此避免了
+昂贵组件的重新渲染。
+
+*/
+
+
+
 let fnn1 = null;
 let fnn2 = null;
 
-// 模拟一个昂贵的组件，也就是重新渲染需要消耗大量资源和实践。
-class ExpensiveComponent extends React.PureComponent{
+// 模拟一个昂贵的组件，也就是重新渲染需要消耗大量资源和时间。
+// PureComponent 也可以用 React.memo 来改写
+// https://www.cnblogs.com/chenjg/p/10327304.html
+class ExpensiveComponent1 extends React.PureComponent{
   render(){
     const date = new Date();
     //const date = 334;
     return <h1 onClick={this.props.onClick}>{date.getSeconds()}我是一个昂贵的组件！渲染耗时！</h1>  
   }  
 }
+
+// React.memo 改写。
+const ExpensiveComponent = React.memo(({onClick})=>{
+  const date = new Date();
+  //const date = 334;
+  return <h1 onClick={onClick}>{date.getSeconds()}我是一个昂贵的组件！渲染耗时！</h1>  
+})
+
 
 
 /**
@@ -29,7 +52,7 @@ function Com1({p1}){
 /**
  * 采用 useCallback() 后 fn1 只在 p1 修改后才会新建。否则保持不变。
  */
-function Com2({p2}){
+function Com2({p2}) {
   const fn1 = React.useCallback(() => console.log("fn1"),[p2]);
   console.log("Com2:", Object.is(fnn2,fn1));
   fnn2 = fn1;
