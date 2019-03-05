@@ -4,6 +4,15 @@ import { ContextProvider } from "./reducer";
 import Counter from "./Counter";
 import CounterTest from "./CounterTest";
 
+/**
+ * 知识点：
+ * useContext  因为这个案例，我们用到了 useReducer 因此先看 useReducer 的使用。
+ * 
+ * ContextProvider 提供 对 context 的封装
+ * 
+ */
+
+
 
 
 const App = () => {
