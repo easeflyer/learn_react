@@ -76,10 +76,12 @@ import './react-basic/reactbasic.js'       // react基础知识
 // Hooks
 //import './react-adv/Hooks/App'
 //import './react-adv/Hooks/App1'                 //PureComponent 局部刷新
+//import './react-adv/Hooks/useEffect'
+//import './react-adv/Hooks/useEffect1'
 //import './react-adv/Hooks/useState'
 //import './react-adv/Hooks/useReducer'
-//import './react-adv/Hooks/useMemo';
-import './react-adv/Hooks/useCallback2';
+import './react-adv/Hooks/useMemo';
+//import './react-adv/Hooks/useCallback2';
 //import './react-adv/Hooks/useContext'
 
 

@@ -2,15 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { useState, useEffect } from 'react';
 
+/**
+ * 知识点：
+ *   - useEffect 什么时候卸载
+ *   - 通过 useEffect 第二个参数，限制执行。
+ *   - 计数器刷新，组件刷新了，但并未重新订阅。
+ *   - 组件卸载。执行清理。
+ *   - Effect 再次执行前，先执行清理。
+ */
 
-/*
-参考官网。这个例子没有彻底搞明白用途。
-能够明确的是
-FriendStatus 组件刷新的时候。
-useEffect 函数，以及 useEffect 返回的函数在 分别都被执行了一次。
-effect函数，也就是传递而给useEffect 的参数，每次渲染都运行，包括 第一次渲染
-*/
 
+
+
+// 官方的 ChatAPI 并没有完整案例。
 const ChatAPI = {
     handle:null,
     isOnline:false,
@@ -35,7 +39,11 @@ const ChatAPI = {
 }
 
 
-
+/**
+ * 使用  useEffect 的函数组件
+ * 注意 在线状态订阅和取消的 执行时间。
+ * @param {*} props 
+ */
 function FriendStatus(props) {
   const [isOnline, setIsOnline] = useState(null);
 
@@ -45,24 +53,35 @@ function FriendStatus(props) {
 
   useEffect(() => {
     ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
-    // 注意返回的函数 也被 React 资深获得，并且在组件卸载的时候执行这个函数。
+    // 注意返回的函数 也被 React 自身获得，并且在组件卸载的时候执行这个函数。
     return () => {
       ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
     };
-  });
+  },[props.friend.id]); // 仅当 id 改变时，才会重新订阅。
 
   if (isOnline === null) {
     return 'Loading...';
   }
-  return isOnline ? 'Online' : 'Offline';
+  return <div>
+    {console.log("FriendStatus 刷新")}
+    {isOnline ? 'Online' : 'Offline'}
+  </div>;
 }
+
+
 
 function App(){
     const [show,setShow] = useState(true);
+    const [count,setCount] = useState(0);
+    const [userId,setUserId] = useState(1);
     return(
         <div>
-            {show? <FriendStatus friend={{id:1,name:'张三'}} />:null}
+            userId:{userId}<br />
+            计数器：{count}<button onClick={()=>setCount(count+1)}>改变计数器</button><br />
+            {show? <FriendStatus friend={{id:userId,name:'张三'}} />:null}
             <button onClick={()=>setShow(!show)}>显示/关闭</button>
+            <button onClick={()=>setUserId(userId+1)}>userid+1</button>
+            
             <button onClick={ChatAPI.login}>登录</button>
             <button onClick={ChatAPI.logout}>退出</button>
         </div>
