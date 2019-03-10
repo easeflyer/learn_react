@@ -28,9 +28,31 @@ function Counter() {
     </div>;
 }
 
+class Counter1 extends React.Component {
+    state = { count: 0 };
+    prevCount = 0;
+    componentDidUpdate() {
+        console.log("我后执行")
+        this.prevCount = this.state.count;
+    }
+    render() {
+        return <div>
+            <h1>Now: {this.state.count}, before: {this.prevCount}</h1>
+            {console.log("我先执行")}
+            <button onClick={() => this.setState({count:this.state.count+1})}>
+            更新count</button>
+        </div>;
+
+    }
+}
+
+
+
+
+
 const Ref = { current: null };
 
-function Counter1() {
+function Counter2() {
     const [count, setCount] = useState(0);
 
     const prevCountRef = Ref;
@@ -61,11 +83,13 @@ function Counter1() {
  */
 
 const App = props => {
-    const [show,setShow] = useState(1)
+    const [show, setShow] = useState(1)
     return <div>
         {show ? <Counter /> : null}
         <hr />
         {show ? <Counter1 /> : null}
+        <hr />
+        {show ? <Counter2 /> : null}
         <hr />
         <button onClick={() => setShow(!show)}>重新挂载</button>
     </div>

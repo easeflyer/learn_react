@@ -10,6 +10,8 @@ import ReactDOM from 'react-dom'
 
 
 const myContext = React.createContext()
+
+
 const Com1 = props => {
     const { count, setCount } = React.useContext(myContext);
     return <div>

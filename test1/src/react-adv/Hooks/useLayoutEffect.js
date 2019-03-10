@@ -5,7 +5,11 @@ import ReactDOM from 'react-dom'
 /**
  * 知识点
  * 1） useLayoutEffect
- * 2） useDebugValue
+ *      参考生命周期函数，注意他的运行的时机。
+ * 2） useDebugValue 调试的作用
+ *      可以用来在React开发工具上，给自定义Hook 显示一个标签。
+ *      标签上的显示的是一个调试值。调试的时候方便参考。
+ * 3） 自定义 Hooks 
  */
 
 
@@ -19,13 +23,13 @@ function Com1() {
     useEffect(() => {
         console.log('useEffect执行....')
         return () => {
-            console.log('useEffect执行 销毁....')
+            console.log('useEffect 销毁....')
         }
     });
     useLayoutEffect(() => {
         console.log('useLayoutEffect执行...')
         return () => {
-            console.log('useLayoutEffect执行 销毁...')
+            console.log('useLayoutEffect 销毁...')
         }
     });
 
@@ -52,10 +56,9 @@ class App1 extends React.Component {
         return <div>
             <Com1 />
             {this.state.count}
-            <button onClick={this.setCount}>count+1</button>
+            <button onClick={this.setCount}>App1 count+1</button>
             {console.log('App 渲染')}
         </div>
-
     }
 }
 // Com1 渲染
@@ -87,9 +90,9 @@ function myHook(){
 function App() {
     const [count, setCount] = myHook()
     return <div>
-        <Com1 />
+        <App1 />
         {count}
-        <button onClick={() => setCount(count + 1)}>count+1</button>
+        <button onClick={() => setCount()}>count+1</button>
     </div>
 }
 

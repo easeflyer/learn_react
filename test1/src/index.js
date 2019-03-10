@@ -6,7 +6,7 @@ import './index.less'; // 如果设置了内部的 字体更换，这里可以�
 import registerServiceWorker from './registerServiceWorker';
 //import App from './App';
 //初级部分
-import './react-basic/reactbasic.js'       // react基础知识
+//import './react-basic/reactbasic.js'       // react基础知识
 //import './react-basic/Componentbasic.js'   // 定义组件的方法
 //import './react-basic/Component';          // 组件抽离与props
 //import './react-basic/state.js'            // 组件的生命周期函数与状态,时钟例子
@@ -172,20 +172,23 @@ import './react-basic/reactbasic.js'       // react基础知识
 
 //import './react-adv/Hooks/useState'
 //import './react-adv/Hooks/useState1'
-import './react-adv/Hooks/useState2'
+//import './react-adv/Hooks/useState2'
 //import './react-adv/Hooks/useEffect'
 //import './react-adv/Hooks/useEffect1'
 //import './react-adv/Hooks/useReducer'
-//import './react-adv/Hooks/useMemo';
-//import './react-adv/Hooks/useCallback2';
-//import './react-adv/Hooks/PureComponent';
 //import './react-adv/Hooks/useContext/Demo1'
 //import './react-adv/Hooks/useContext'
-
-//import './react-adv/Hooks/useRef'
+//import './react-adv/Hooks/useCallback';
+//import './react-adv/Hooks/useCallback1';
+//import './react-adv/Hooks/useCallback2';
+//import './react-adv/Hooks/useMemo';
+//import './react-adv/Hooks/useRef';
+//import './react-adv/Hooks/useRef1';
 //import './react-adv/Hooks/forwardRef'
-//import './react-adv/Hooks/useImperativeMethods'
-//import './react-adv/Hooks/useLayoutEffect'
+//import './react-adv/Hooks/useImperativeHandle'
+//import './react-adv/Hooks/useImperativeHandle1'
+//import './react-adv/Hooks/PureComponent';
+import './react-adv/Hooks/useLayoutEffect'
 
 
 

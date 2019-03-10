@@ -1,10 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+/**
+ * 知识点：
+ *   - 概要理解 useCallback 的意义。
+ *   - 每次修改 num, memoizedCallback 才发生了变化，否则不变。避免了重新生成。
+ * 
+ * 
+ * 本例子本来是网上找的例子，但是运行结果不正确。然后我自己修改了。
+ * 从网上找的例子，有一些是错误的。
+ * 也有的因为版本更新而变为错误的。
+ */
+
+
+
+
 let fn=null;
 
 
 function TestUseCallback({ num, name }) {
+  //const cb = ()=>console.log(33);
   const memoizedCallback = React.useCallback(
     () => {
       console.log('abc')
@@ -12,9 +28,8 @@ function TestUseCallback({ num, name }) {
     },
     [num],
   );
-  ()=>{}
-  console.log('记忆 num > ', Object.is(fn,memoizedCallback), name)
-  console.log('原始 num > ', num, name);
+  console.log('callback 是否相同：', Object.is(fn,memoizedCallback), name);
+  console.log('num > ', num, name);
   fn = memoizedCallback;
   return (
     <div>
